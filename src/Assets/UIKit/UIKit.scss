@@ -1,0 +1,8 @@
+@mixin padding($props) {
+    padding-left: $props;
+    padding-right: $props;
+}
+
+%borders {
+    @include padding(8.72%)
+}

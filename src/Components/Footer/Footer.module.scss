@@ -1,0 +1,5 @@
+@import './../../Assets/UIKit/UIKit.scss';
+
+.footer {
+    @extend %borders
+}
