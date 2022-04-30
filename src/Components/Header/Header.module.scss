@@ -1,0 +1,49 @@
+@import './../../Assets/UIKit/UIKit.scss';
+
+.header {
+    @extend %borders;
+
+    height: 60px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    &__logo {
+        width: 85px;
+        height: 30px;
+        
+        font-style: normal;
+        font-weight: 700;
+        font-size: 25px;
+        line-height: 30px;
+    }
+    &__container {
+        width: 60px;
+        height: 20px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        }
+    &__icon {
+        position: relative;
+    }
+    &__num {
+        width: 15px;
+            height: 15px;
+            background-color: #FFA542;
+            border-radius: 50%;
+            position: absolute;
+            top: -4px;
+            left: 13px;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 13px;
+            line-height: 15px;
+            overflow: hidden;
+            
+            color: #FFFFFF;
+    }
+}
