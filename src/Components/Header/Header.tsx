@@ -1,15 +1,18 @@
 import React from "react";
 import styles from "./Header.module.scss"
 import BurgerMenuIcon from "./../../Assets/Images/Header/burgerMenuIcon.svg"
-import { HeaderIcon } from "./HeaderIcon/HeaderIcon";
+import { BusketIcon } from "./BusketIcon/BusketIcon";
+import { FavorIcon } from "./FavorIcon/FavorIcon";
+import { Logo } from "./Logo/Logo";
 
 export const Header: React.FC = ({}) => {
     return (
         <header className={styles.header}>
-            <div className={styles.header__logo}>QPICK</div>
+            <Logo />
             <div className={styles.header__container}>
-                <HeaderIcon />
-                <img src={BurgerMenuIcon} alt="BurgerMenuIcon" />
+                <BusketIcon />
+                <FavorIcon />
+                <img className={styles.header__burgerMenu} src={BurgerMenuIcon} alt="BurgerMenuIcon" />
             </div>
         </header>
     );

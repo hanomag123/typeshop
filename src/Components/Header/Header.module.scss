@@ -29,21 +29,51 @@
         }
     &__icon {
         position: relative;
+        cursor: pointer;
     }
     &__num {
         width: 15px;
-            height: 15px;
-            background-color: #FFA542;
-            border-radius: 50%;
-            position: absolute;
-            top: -4px;
-            left: 13px;
-            font-style: normal;
-            font-weight: 500;
-            font-size: 13px;
-            line-height: 15px;
-            overflow: hidden;
-            
-            color: #FFFFFF;
+        height: 15px;
+        background-color: #FFA542;
+        border-radius: 50%;
+        position: absolute;
+        top: -4px;
+        left: 13px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 15px;
+        overflow: hidden;
+        
+        color: #FFFFFF;
+    }
+    &__favorIcon {
+        cursor: pointer;
+        position: relative;
+        @media (max-width: 1024px) {
+            display: none;
+        }
+    }
+    &__favorNum {
+        width: 15px;
+        height: 15px;
+        background-color: #FFA542;
+        border-radius: 50%;
+        position: absolute;
+        top: -4px;
+        left: 14px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 15px;
+        overflow: hidden;
+        
+        color: #FFFFFF;
+    }
+    &__burgerMenu {
+        cursor: pointer;
+        @media (min-width: 1024px) {
+            display: none;
+        }
     }
 }
