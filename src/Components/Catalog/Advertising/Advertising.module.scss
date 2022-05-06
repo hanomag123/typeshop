@@ -1,0 +1,47 @@
+@import url('./../../../Assets/UIKit/UIKit.scss');
+
+.advertising {
+    width: 100%;
+
+    background: no-repeat (right bottom 60%)/(auto 120%) url('./../../../Assets/Images/Catalog/Advertising/BG.png');
+    background-color: #101010;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+
+    font-weight: 600;
+    
+    color: #FFFFFF;
+
+    padding-left: 20%;
+    padding-right: 10%;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    @media (max-width: 768px) {
+        font-size: 20px;
+        line-height: 24px;
+    }
+    @media (max-width: 600px) {
+        background-image: none;
+    }
+    @media (max-width: 180px) {
+        background-image: none  ;
+    }
+    &__title {
+        min-height: 74px;
+        width: 60%;
+        text-align: left;
+        font-size: 30px;
+        line-height: 37px;
+        max-width: 300px;
+        margin: 50px 0 50px;
+        @media (max-width: 768px) {
+            font-size: 20px;
+            line-height: 24px;
+        }
+        @media (max-width: 345px) {
+            display: none;
+        }
+    }
+}

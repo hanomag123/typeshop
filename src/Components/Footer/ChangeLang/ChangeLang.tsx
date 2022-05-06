@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./../Footer.module.scss"
 import changeLangIcon from "./../../../Assets/Images/Footer/browseIcon.svg"
-import { DefaultType } from "../../Types/DefaultType";
+import { DefaultType } from "../../../Types/DefaultType";
 
 
 export const ChangeLang: React.FC<DefaultType> = () => {

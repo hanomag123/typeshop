@@ -1,0 +1,22 @@
+.catalogItem {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    box-sizing: border-box;
+    padding:57px 5px 32px;
+    &__image {
+        width: calc(100% - 132px);
+        height: 240px;
+        object-fit: contain;
+        margin: 0 44px 54px;
+        box-sizing: border-box;
+        @media (max-width: 370px) {
+            width: calc(80% - 30px);
+            height: unset;
+            margin: 0 10px 12px;
+        }
+        @media (max-width: 220px) {
+            
+        }
+    }
+}

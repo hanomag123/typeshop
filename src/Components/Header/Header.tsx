@@ -5,7 +5,7 @@ import { BusketIcon } from "./BusketIcon/BusketIcon";
 import { FavorIcon } from "./FavorIcon/FavorIcon";
 import { Logo } from "./Logo/Logo";
 
-export const Header: React.FC = ({}) => {
+export const Header: React.FC = () => {
     return (
         <header className={styles.header}>
             <Logo />

@@ -4,7 +4,7 @@ import { Logo } from "../Header/Logo/Logo";
 import { ChangeLang } from "./ChangeLang/ChangeLang";
 import { Social } from "./Social/Social";
 
-export const Footer: React.FC = ({}) => {
+export const Footer: React.FC = () => {
     return (
         <footer className={styles.footer}>
             <Logo />
