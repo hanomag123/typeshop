@@ -1,0 +1,48 @@
+@import url('./../../Assets/UIKit/UIKit.scss');
+
+.products {
+
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 24px;
+    &__title {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 17px;
+        line-height: 21px;
+        /* identical to box height */
+    
+        color: #838383;
+
+        text-align: left;
+        margin-bottom: 19px;
+    }
+    &__container {
+        margin-top: 20px;
+
+        display: grid;
+        grid-template-columns: 0.25fr 0.5fr 0.25fr;
+        grid-gap: 20px;
+    }
+    &__button {
+        background: #101010;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+        border-radius: 15px;
+        border: 0;
+
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 18px;
+        text-align: center;
+        
+        color: #FFFFFF;
+
+        height: 65px;
+    }
+}

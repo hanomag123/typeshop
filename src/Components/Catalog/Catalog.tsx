@@ -21,8 +21,9 @@ export const Catalog: React.FC = () => {
     return (
         <section className={styles.catalog}>
             <Advertising />
+            <div className={styles.catalog__title}>Каталог</div>
             <div className={styles.catalog__container}>
-                {product.map(el => <CatalogItem key={el.id} title={el.title} price={el.price} rate={el.rating.rate} image={el.image}/>)}
+                {product.map(el => <CatalogItem key={el.id} id={el.id} title={el.title} price={el.price} rate={el.rating.rate} image={el.image} single={true}/>)}
             </div>
         </section>
     );
