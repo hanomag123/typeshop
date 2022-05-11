@@ -44,5 +44,10 @@
         color: #FFFFFF;
 
         height: 65px;
+        transition: transform .5s ease-out;
+        cursor: pointer;
+        &:hover {
+            transform: scale(1.05);
+        }
     }
 }
