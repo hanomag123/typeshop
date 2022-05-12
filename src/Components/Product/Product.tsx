@@ -10,7 +10,7 @@ import busketIcon from './../../Assets/Images/Product/BusketIcon.svg'
 import WhatsappIcon from './../../Assets/Images/Product/WhatsappIcon.svg'
 import { useDispatch } from "react-redux";
 import { BusketActionTypes } from "../../Types/BusketAction";
-interface IBusket extends IProduct{
+export interface IBusket extends IProduct{
     count: number
 }
 
