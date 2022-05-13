@@ -3,6 +3,7 @@ import { usePersistedState } from "../../Hooks/usePersistedState";
 import { IBusket } from "../Product/Product";
 import styles from "./Busket.module.scss"
 import { BusketEmpty } from "./BusketEmpty/BusketEmpty";
+import { BusketItem } from "./BusketItem/BusketItem";
 
 
 export const Busket: React.FC = () => {
@@ -13,7 +14,7 @@ export const Busket: React.FC = () => {
     }
     return (
         <section className={styles.busket}>
-            {busket.map(el => <div>{el.title}{el.count}</div>)}
+            {busket.map(el => <BusketItem name={el.title} count={el.count} price={el.price} img={el.image} key={el.id}/>)}
         </section>
     );
 }
