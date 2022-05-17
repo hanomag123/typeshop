@@ -3,6 +3,79 @@
 .busketItem {
     @extend %mainItem;
 
+    box-sizing: border-box;
+    padding: 30px;
+    display: grid;
+    grid-template-areas: 
+    'image title delete'
+    'image price price'
+    'container container cost'
+    ;
+    grid-template-columns: 70px 3fr 1fr;
+    &__deleteIcon {
+        grid-area: delete;
+        display: block;
+        margin: 0 0 auto auto;
+        will-change: transform;
+        cursor: pointer;
+        transition: transform .5s ease-in-out;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+    &__image {
+        display: block;
+        object-fit: contain;
+        margin: auto auto;
+        width: 70px;
+        max-width: 150px;
+        height: 70px;
+        grid-area: image;
+    }
+    &__title {
+        box-sizing: border-box;
+        padding-left: 10px;
+        text-align: left;
+        align-self: flex-end;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        
+        color: #1C1C27;
+    }
+    &__price {
+        box-sizing: border-box;
+        padding-left: 10px;
+        grid-area: price;
+        text-align: left;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 18px;
+        
+        color: #1C1C27;
+    }
+    &__countContainer {
+        grid-area: container;
+        display: flex;
+        gap: 15px;
+        padding-top: 20px;
+        box-sizing: border-box;
+    }
+    &__count {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 17px;
+        line-height: 30px;
+        /* identical to box height */
+        
+        width: 12px;
+        color: #000000;
+    }
     &__button {
         background: #FFCE7F;
         border: 0;
@@ -10,6 +83,25 @@
         width: 30px;
         height: 30px;
         position: relative;
+        cursor: pointer;
+        transition: transform .5s ease-in-out;
+        &:hover {
+            transform: scale(1.1);
+        }
+        @keyframes click {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        &:focus {
+            animation: 0.5s ease-in-out running click;
+        }
     }
     &__minusImg {
         position: absolute;
@@ -17,5 +109,19 @@
         width: 15px;
         left: calc(50% - 7.5px);
         top: calc(50% - 7.5px);
+    }
+    &__cost {
+        grid-area: cost;
+        text-align: right;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 18px;
+        
+        color: #1C1C27;
+
+        padding-top: 20px;
+        box-sizing: border-box;
     }
 }

@@ -3,5 +3,98 @@
 .busket {
     @extend %borders;
 
-    
+    min-height: calc(100vh - 250px);
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @media (min-width: 1024px) {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 120px;
+    }
+    &__container {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        @media (min-width: 1024px) {
+            width: 60%;
+        }
+    }
+    &__mainTitle {
+        display: none;
+        @media (min-width: 1024px) {
+            display: block;
+        }
+        align-self: flex-start;
+
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+        
+        color: #1C1C27;
+    }
+    &__total {
+        @extend %mainItem;
+
+        height: 124px;
+
+        position: relative;
+
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        padding-bottom: 0;
+        box-sizing: border-box;
+        margin-bottom: 30px;
+        @media (min-width: 1024px) {
+            width: 30%;
+            margin-top: 74px;
+        }
+    }
+    &__title {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 18px;
+        
+        color: #000000; 
+    }
+    &__cost {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        /* identical to box height */
+        
+        text-align: right;
+        
+        color: #000000;
+    }
+    &__button {
+        @extend %button;
+
+        position: absolute;
+
+        width: 100%;
+        bottom: 0;
+        left: 0;
+
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 17px;
+        line-height: 21px;
+        /* identical to box height */
+        
+        text-align: center;
+        
+        color: #FFFFFF;
+    }
 }

@@ -8,6 +8,7 @@ import { toogleLocalStorage } from "../../Const/toogleLocalStorage";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { FavoriteTypes } from "../../../Types/FavoriteType";
+import { IProduct } from "../../../Types/Product";
 
 interface IItem {
     id: number
@@ -23,9 +24,9 @@ export const CatalogItem: React.FC<IItem> = ({id, title, price, rate, image, sin
     const [toogle, setToogle] = useReducer(toogle => !toogle, false)
     const dispatch = useDispatch()
     useEffect(() => {
-        let arr: any[] = JSON.parse(localStorage.getItem('FavoriteItems') || '[]');
-        arr = arr.map(v => v.id)
-        arr.includes(id) && setToogle()
+        let arr: IProduct[] = JSON.parse(localStorage.getItem('FavoriteItems') || '[]');
+        let newArr: number[] = arr.map(v => v.id)
+        newArr.includes(id) && setToogle()
     }, [])
     useEffect(() => {
         dispatch({type: FavoriteTypes.INIT, payload: JSON.parse(localStorage.getItem('FavoriteItems') || '[]').length})
