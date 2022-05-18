@@ -5,8 +5,13 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import styles from './Accordion.module.scss'
+import { DescriptionTwoTone } from '@mui/icons-material';
 
-export default function SimpleAccordion() {
+interface IProp{
+    description: string
+}
+
+export default function SimpleAccordion({description}: IProp) {
     return (
     <div>
     <Accordion className={styles.accordion}>
@@ -20,8 +25,7 @@ export default function SimpleAccordion() {
     </AccordionSummary>
     <AccordionDetails>
         <Typography>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-        malesuada lacus ex, sit amet blandit leo lobortis eget.
+        {description}
         </Typography>
     </AccordionDetails>
     </Accordion>

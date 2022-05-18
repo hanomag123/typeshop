@@ -9,13 +9,14 @@ import { Link } from "react-router-dom";
 
 interface IProps {
     toogle: boolean
+    useToogle: React.DispatchWithoutAction
 }
 
-export const BurgerMenu: React.FC<IProps> = ({toogle}) => {
+export const BurgerMenu: React.FC<IProps> = ({toogle, useToogle}) => {
     return (
         <ul className={styles.burgerMenu + ' ' + (toogle && styles.burgerMenu__active)}>
             <li className={styles.burgerMenu__item}><img src={mobileIcon} alt="mobileIcon" /><span>Выбрать модель телефона</span></li>
-            <Link to='/favore'><li className={styles.burgerMenu__item}><img src={favorIcon} alt="favorIcon" /><span>Избранное</span> </li></Link>
+            <Link onClick={useToogle} to='/favore'><li className={styles.burgerMenu__item}><img src={favorIcon} alt="favorIcon" /><span>Избранное</span> </li></Link>
             <li className={styles.burgerMenu__item}><img src={docIcon} alt="docIcon" /><span>Условия сервиса</span></li>
             <li className={styles.burgerMenu__item}><img src={phoneIcon} alt="phoneIcon" /><span>Контакты</span></li>
             <li className={styles.burgerMenu__item}><img src={langIcon} alt="langIcon" /><span>Каз</span> <span>Рус</span> <span>Eng</span></li>

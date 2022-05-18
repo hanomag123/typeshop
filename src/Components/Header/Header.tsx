@@ -15,7 +15,7 @@ export const Header: React.FC = () => {
                 <BusketIcon/>
                 <FavorIcon />
                 <img onClick={useToogle} className={styles.header__burgerMenu} src={BurgerMenuIcon} alt="BurgerMenuIcon" />
-                <BurgerMenu toogle={toogle}/>
+                <BurgerMenu toogle={toogle} useToogle={useToogle}/>
             </div>
         </header>
     );

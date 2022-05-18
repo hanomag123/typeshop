@@ -1,10 +1,14 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .App {
   text-align: center;
   height: 100%;
   position: relative;
   overflow: hidden;
 }
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

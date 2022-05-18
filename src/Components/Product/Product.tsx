@@ -25,8 +25,7 @@ export const Product: React.FC = () => {
     const curProd  = product.find(v => v.id === id) as IProduct
 
     useEffect(() => {
-        fetchProducts()
-        localStorage.setItem('ProductItems', JSON.stringify(product))
+        !product.length && fetchProducts()
     }, [])
     useEffect(() => {
         dispatch({type: BusketActionTypes.UPDATE, payload: busket.length})
@@ -51,7 +50,7 @@ export const Product: React.FC = () => {
         <div className={styles.products}>
             <div className={styles.products__title}>Продукт</div>
             <CatalogItem id={curProd?.id} image={curProd?.image} price={curProd?.price} rate={curProd?.rating.rate} title={curProd?.title} single={false}/>
-            <Accordion />
+            <Accordion description={curProd.description}/>
             <div className={styles.products__container}>
                 <button onClick={() => addItemToBusket()} className={styles.products__button}><img src={busketIcon} alt='busketIcon'/></button>
                 <button className={styles.products__button}>Купить сейчас!</button>

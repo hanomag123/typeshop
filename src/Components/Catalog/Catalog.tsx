@@ -10,7 +10,9 @@ export const Catalog: React.FC = () => {
     const {error, loading, product} = useTypedSelector(state => state.product)
     const {fetchProducts} = useAction()
     useEffect(() => {
-        fetchProducts()
+        if (!product.length) {
+            fetchProducts()
+        }
     }, [])
     if (loading) {
         return <section className={styles.catalog}><Advertising /><h1>Loading...</h1></section>

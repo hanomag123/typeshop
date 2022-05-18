@@ -15,6 +15,7 @@ export interface IProduct {
     image: string
     price: number
     rating: IRating
+    description: string
 }
 export interface ProductState {
     product: IProduct[];
