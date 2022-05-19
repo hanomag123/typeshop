@@ -1,9 +1,12 @@
 import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { useAction } from "../../Hooks/useAction";
 import { useTypedSelector } from "../../Hooks/useTypedSelector";
+import { FilterCategory, FilterType } from "../../Store/Reducers/FilterReducer";
 import { Advertising } from "./Advertising/Advertising";
 import styles from "./Catalog.module.scss"
 import { CatalogItem } from "./CatalogItem/CatalogItem";
+import { Filter } from './Filter/Filter';
 
 
 export const Catalog: React.FC = () => {
@@ -23,6 +26,7 @@ export const Catalog: React.FC = () => {
     return (
         <section className={styles.catalog}>
             <Advertising />
+            <Filter />
             <div className={styles.catalog__title}>Каталог</div>
             <div className={styles.catalog__container}>
                 {product.map(el => <CatalogItem key={el.id} id={el.id} title={el.title} price={el.price} rate={el.rating.rate} image={el.image} single={true}/>)}
