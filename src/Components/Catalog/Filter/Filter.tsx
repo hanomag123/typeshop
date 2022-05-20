@@ -8,7 +8,7 @@ import styles from "./Filter.module.scss"
 export const Filter: React.FC = () => {
     const dispatch = useDispatch()
     const {filter}: IFilter = useTypedSelector(state => state.filter)
-    const handleChange = (event: any) => {
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>):void => {
         dispatch({type: FilterType.UPDATE_FILTER, payload: filter[event.target.id as FilterCategory] = !filter[event.target.id as FilterCategory]})
     }
     return (
