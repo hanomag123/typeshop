@@ -7,7 +7,9 @@ import { Favorites } from './Components/Favorites/Favorites';
 import { Footer } from './Components/Footer/Footer';
 import { Header } from './Components/Header/Header';
 import { Oops } from './Components/Oops/Oops';
+import { Ordering } from './Components/Ordering/Ordering';
 import { Product } from './Components/Product/Product';
+import { TermsOfCervice } from './Components/TermsOfCervice/TermsOfCervice';
 
 function App() {
 
@@ -20,6 +22,8 @@ function App() {
         <Route path='/catalog/:id' element={<Product />}/>
         <Route path='/busket' element={<Busket />} />
         <Route path='/favore' element={<Favorites />} />
+        <Route path='/terms' element={<TermsOfCervice />} />
+        <Route path='/order' element={<Ordering />} />
         <Route path='*' element={<Oops />} />
       </Routes>
       <Footer />

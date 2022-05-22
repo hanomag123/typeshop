@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
                 </ul>
             </nav>
             <div className={styles.footer__container}>
-                <div>Условия сервиса</div>
+                <div><Link to='/terms'>Условия сервиса</Link></div>
                 <ChangeLang/>
             </div>
             <Social />

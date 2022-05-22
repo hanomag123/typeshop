@@ -30,14 +30,13 @@ export const Product: React.FC = () => {
     useEffect(() => {
         dispatch({type: BusketActionTypes.UPDATE, payload: busket.length})
     }, [busket])
-
     const addItemToBusket = () => {
         if (busket.some((v: { id: number; }):boolean => v.id === id)) {
             let index: number = busket.findIndex((v: {id: number}) => v.id === id)
             busket[index].count++
             setBusket(busket)
         } else {
-            setBusket([...busket, {...product[id - 1], count: 1}])
+            setBusket([...busket, {...curProd, count: 1}])
         }
     }
     if (loading) {
@@ -49,7 +48,7 @@ export const Product: React.FC = () => {
     return (
         <div className={styles.products}>
             <div className={styles.products__title}>Продукт</div>
-            <CatalogItem id={curProd?.id} image={curProd?.image} price={curProd?.price} rate={curProd?.rating.rate} title={curProd?.title} single={false}/>
+            <CatalogItem id={curProd?.id} image={curProd?.image} price={curProd?.price} rate={curProd?.rating.rate} title={curProd?.title} single={false} key={curProd.id}/>
             <Accordion description={curProd.description}/>
             <div className={styles.products__container}>
                 <button onClick={() => addItemToBusket()} className={styles.products__button}><img src={busketIcon} alt='busketIcon'/></button>

@@ -24,6 +24,9 @@
 
     transition: 1s ease-in-out;
     transform: translate(100%);
+    li {
+        cursor: pointer;
+    }
     @media (min-width: 1024px) {
         display: none;
     }

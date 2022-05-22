@@ -1,0 +1,121 @@
+@import '../../Assets/UIKit/UIKit.scss';
+
+.ordering {
+    @extend %borders;
+    &__title {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 17px;
+        line-height: 21px;
+        /* identical to box height */
+        
+        
+        color: #000000;
+        
+    }
+    &__form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 45px);
+        row-gap: 6px;
+        column-gap: 30px;
+    }
+    select {
+        border-radius: 15px;
+        border: 0;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        
+        color: #101010;
+
+        height: 45px;
+        box-sizing: border-box;
+        padding-left: 14px;
+        background: no-repeat (95%) url('./../../Assets/Images/Order/ArrowIcon.svg'), #D6D6D6;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        &:focus {
+            // background: none;
+            background-color: #D6D6D6;
+            outline: none;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 18px;
+            
+            color: #101010;
+        }
+    }
+    option {
+        background: #D6D6D6;
+        border-radius: 15px;
+
+    }
+    &__item {
+        background: no-repeat (90%) url('./../../Assets/Images/Order/PenIcon.svg'), #D6D6D6;
+        border-radius: 15px;
+        border: 0;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        
+        color: #8E8E8E;
+
+        height: 45px;
+        box-sizing: border-box;
+        padding-left: 14px;
+        &:focus {
+            background: none;
+            background-color: #D6D6D6;
+            outline: none;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 18px;
+            
+            color: #101010;
+        }
+    }
+    &__input {
+            grid-column-start: 1;
+            grid-column-end: 3;
+
+            background: no-repeat (95%) url('./../../Assets/Images/Order/PenIcon.svg'), #D6D6D6;
+            border-radius: 15px;
+            border: 0;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 18px;
+            
+            color: #8E8E8E;
+    
+            height: 45px;
+            box-sizing: border-box;
+            padding-left: 14px;
+            &:focus {
+                background: none;
+                background-color: #D6D6D6;
+                outline: none;
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 15px;
+                line-height: 18px;
+                
+                color: #101010;
+            }
+    }
+}

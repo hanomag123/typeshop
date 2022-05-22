@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { usePersistedState } from "../../Hooks/usePersistedState";
 import { totalCost } from "../Const/totalCost";
 import { IBusket } from "../Product/Product";
@@ -20,7 +21,7 @@ export const Busket: React.FC = () => {
             </div>
                 <div className={styles.busket__total}>
                     <span className={styles.busket__title}>Итого</span> <span className={styles.busket__cost}>{totalCost(busket)}$</span>
-                    <button className={styles.busket__button}>Перейти к оформлению</button>
+                    <Link to='/order'><button className={styles.busket__button}>Перейти к оформлению</button></Link>
                 </div>
         </section>
     );
