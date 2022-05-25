@@ -1,19 +1,33 @@
-import React, { useCallback } from "react";
+import React from "react";
+import { BusketEmpty } from "../Busket/BusketEmpty/BusketEmpty";
+import { Oops } from "../Oops/Oops";
 import { IBusket } from "../Product/Product";
 import styles from "./Ordering.module.scss"
 
 export const Ordering: React.FC = () => {
     const busket:IBusket[] = JSON.parse(localStorage.getItem('BusketItems') || '[]')
 
-    const giveTotalCost = useCallback((): number => {
+    const giveTotalCost = ((): number => {
         return +(busket.reduce((num: number, item: IBusket) => num + item.price * item.count, 0)).toFixed(2)
-    }, [busket])
+    })
+
+    if (!busket.length) {
+        return <BusketEmpty />
+    }
     return (
         <div className={styles.ordering}>
             <div>
                 <span className={styles.ordering__title}>Товары</span>
                 <div>
-                    {busket.map(item => <div key={item.id}>{item.count} x {item.title}</div>)}
+                    {busket.map(item => (
+                    <div className={styles.ordering__productItem} key={item.id}>
+                        <img className={styles.ordering__image} src={item.image} alt='ImageItem'/>
+                        <div className={styles.ordering__wrapper}>
+                            <div>{item.count} x {item.title}</div>
+                            <div>{item.count * item.price}</div>
+                        </div >
+                        <div>{item.price}</div>
+                    </div>))}
                 </div>
             </div>
             <div>

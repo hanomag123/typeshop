@@ -1,0 +1,51 @@
+@import '../../Assets/UIKit/UIKit.scss';
+
+.contacts {
+    @extend %borders;
+
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 40px;
+        grid-row-gap: 20px;
+    }
+    &__apps {
+        @extend %mainItem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        cursor: pointer;
+
+        img {
+            width: 40%;
+            height: 40%;
+            object-fit: contain;
+            transition: transform 1s ease-out;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    button {
+        @extend %button;
+        width: 100%;
+
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 17px;
+        line-height: 21px;
+        /* identical to box height */
+        
+        
+        color: #FFFFFF;
+    }
+}

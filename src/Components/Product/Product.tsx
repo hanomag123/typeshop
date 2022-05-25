@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation, Navigate } from "react-router-dom";
 import { useAction } from "../../Hooks/useAction";
 import { useTypedSelector } from "../../Hooks/useTypedSelector";
 import styles from "./Product.module.scss"
@@ -39,6 +39,11 @@ export const Product: React.FC = () => {
             setBusket([...busket, {...curProd, count: 1}])
         }
     }
+    const handle = () => {
+        addItemToBusket()
+        window.open('/busket', "_self")
+        
+    }
     if (loading) {
         return <section className={styles.products}><h1>Loading...</h1></section>
     } 
@@ -52,7 +57,7 @@ export const Product: React.FC = () => {
             <Accordion description={curProd.description}/>
             <div className={styles.products__container}>
                 <button onClick={() => addItemToBusket()} className={styles.products__button}><img src={busketIcon} alt='busketIcon'/></button>
-                <button className={styles.products__button}>Купить сейчас!</button>
+                <button onClick={handle} className={styles.products__button}>Купить сейчас!</button>
                 <button className={styles.products__button}><img src={WhatsappIcon} alt='WhatsAppIcon'/></button>
             </div>
         </div>

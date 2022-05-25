@@ -13,12 +13,11 @@ export const Footer: React.FC = () => {
                 <ul className={styles.footer__nav}>
                     <li><Link to='/favore'>Избранное</Link></li>
                     <li><Link to='/busket'>Корзина</Link></li>
-                    <li>Контакты</li>
+                    <li><Link to='/contacts'>Контакты</Link></li>
                 </ul>
             </nav>
             <div className={styles.footer__container}>
                 <div><Link to='/terms'>Условия сервиса</Link></div>
-                <ChangeLang/>
             </div>
             <Social />
         </footer>

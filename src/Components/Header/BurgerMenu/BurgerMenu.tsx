@@ -26,8 +26,7 @@ export const BurgerMenu: React.FC<IProps> = ({toogle, useToogle}) => {
             {active && display && <Filter />}
             <Link onClick={useToogle} to='/favore'><li className={styles.burgerMenu__item}><img src={favorIcon} alt="favorIcon" /><span>Избранное</span> </li></Link>
             <Link onClick={useToogle} to='/terms'><li className={styles.burgerMenu__item}><img src={docIcon} alt="docIcon" /><span>Условия сервиса</span></li></Link>
-            <li className={styles.burgerMenu__item}><img src={phoneIcon} alt="phoneIcon" /><span>Контакты</span></li>
-            <li className={styles.burgerMenu__item}><img src={langIcon} alt="langIcon" /><span>Каз</span> <span>Рус</span> <span>Eng</span></li>
+            <Link onClick={useToogle} to='/contacts'><li className={styles.burgerMenu__item}><img src={phoneIcon} alt="phoneIcon" /><span>Контакты</span></li></Link>
         </ul>
     );
 }

@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Busket } from './Components/Busket/Busket';
 import { Catalog } from './Components/Catalog/Catalog';
+import { Contacts } from './Components/Contacts/Contacts';
 import { Favorites } from './Components/Favorites/Favorites';
 import { Footer } from './Components/Footer/Footer';
 import { Header } from './Components/Header/Header';
@@ -24,6 +25,7 @@ function App() {
         <Route path='/favore' element={<Favorites />} />
         <Route path='/terms' element={<TermsOfCervice />} />
         <Route path='/order' element={<Ordering />} />
+        <Route path='/contacts' element={<Contacts />} />
         <Route path='*' element={<Oops />} />
       </Routes>
       <Footer />
