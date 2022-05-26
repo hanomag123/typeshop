@@ -2,6 +2,38 @@
 
 .ordering {
     @extend %borders;
+    background: #FFFFFF;
+    min-height: calc(100vh - 60px);
+    display: grid;
+    grid-gap: 30px;
+    @media (min-width: 1024px) {
+        background: none;
+        img {
+            display: none;
+        }
+    }
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        text-align: right;
+        
+        color: #000000;
+
+        margin-top: 5%;
+    }
+    &__containerItem {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
     &__title {
         font-family: 'Montserrat';
         font-style: normal;
@@ -12,7 +44,8 @@
         
         
         color: #000000;
-        
+        text-align: left;
+        margin-bottom: 10px;
     }
     &__productItem {
         display: flex;
@@ -30,7 +63,7 @@
     }
     &__form {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(100px, 1fr));
         grid-template-rows: repeat(4, 45px);
         row-gap: 6px;
         column-gap: 30px;
@@ -131,5 +164,70 @@
                 
                 color: #101010;
             }
+    }
+    &__order {
+        display: flex;
+        justify-content: space-between;
+    }
+    button {
+        @extend %button;
+
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 17px;
+        line-height: 21px;
+        /* identical to box height */
+        
+        text-align: center;
+        
+        color: #FFFFFF;
+
+        width: 100%;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    &__price {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        text-align: right;
+        
+        color: #000000;
+    }
+    &__buttonContainer {
+        background-color: #D3D3D3;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 10vw;
+            background-color: #D3D3D3;
+
+            left: -12.5%;
+            z-index: 0;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 10vw;
+            background-color: #D3D3D3;
+
+            right: -12.5%;
+            z-index: 0;
+        }
+        @media (min-width: 1024px) {
+            background-color: unset;
+            &::before {
+                display: none;
+            }
+            &::after {
+                display: none;
+            }
+        }
     }
 }

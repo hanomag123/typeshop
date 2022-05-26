@@ -1,12 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { BusketEmpty } from "../Busket/BusketEmpty/BusketEmpty";
-import { Oops } from "../Oops/Oops";
 import { IBusket } from "../Product/Product";
 import styles from "./Ordering.module.scss"
 
 export const Ordering: React.FC = () => {
     const busket:IBusket[] = JSON.parse(localStorage.getItem('BusketItems') || '[]')
-
+    const date = Date.now()
     const giveTotalCost = ((): number => {
         return +(busket.reduce((num: number, item: IBusket) => num + item.price * item.count, 0)).toFixed(2)
     })
@@ -16,22 +16,21 @@ export const Ordering: React.FC = () => {
     }
     return (
         <div className={styles.ordering}>
-            <div>
+            <div className={styles.ordering__container}>
                 <span className={styles.ordering__title}>Товары</span>
-                <div>
+                <div className={styles.ordering__containerItem}>
                     {busket.map(item => (
                     <div className={styles.ordering__productItem} key={item.id}>
                         <img className={styles.ordering__image} src={item.image} alt='ImageItem'/>
                         <div className={styles.ordering__wrapper}>
                             <div>{item.count} x {item.title}</div>
-                            <div>{item.count * item.price}</div>
+                            <div>{item.count * item.price} $</div>
                         </div >
-                        <div>{item.price}</div>
+                        <div>{item.price} $</div>
                     </div>))}
                 </div>
             </div>
             <div>
-                <span>Доставка курьером</span><span>100</span>
                 <div className={styles.ordering__title}>Адрес доставки</div>
                 <form className={styles.ordering__form} id='form' method='get'>
                     <select name='city'>
@@ -45,11 +44,11 @@ export const Ordering: React.FC = () => {
                     <input className={styles.ordering__item} type='text' name="room" placeholder='Квартира'></input>
                 </form>
             </div>
-            <div>
-                <span className={styles.ordering__title}>К оплате</span><span>{giveTotalCost()}</span>
+            <div className={styles.ordering__order}>
+                <span className={styles.ordering__title}>К оплате</span><span className={styles.ordering__price}>{giveTotalCost()} $</span>
             </div>
-            <div>
-                <button form="form">Разместить заказ</button>
+            <div className={styles.ordering__buttonContainer}>
+                <Link to={`/order/${date}`}><button form="form">Разместить заказ</button></Link>
             </div>
         </div>
     );

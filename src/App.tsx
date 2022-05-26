@@ -8,6 +8,7 @@ import { Favorites } from './Components/Favorites/Favorites';
 import { Footer } from './Components/Footer/Footer';
 import { Header } from './Components/Header/Header';
 import { Oops } from './Components/Oops/Oops';
+import { OrderComplete } from './Components/Ordering/OrderComplete/OrderComplete';
 import { Ordering } from './Components/Ordering/Ordering';
 import { Product } from './Components/Product/Product';
 import { TermsOfCervice } from './Components/TermsOfCervice/TermsOfCervice';
@@ -26,6 +27,7 @@ function App() {
         <Route path='/terms' element={<TermsOfCervice />} />
         <Route path='/order' element={<Ordering />} />
         <Route path='/contacts' element={<Contacts />} />
+        <Route path='/order/:num' element={<OrderComplete />}/>
         <Route path='*' element={<Oops />} />
       </Routes>
       <Footer />

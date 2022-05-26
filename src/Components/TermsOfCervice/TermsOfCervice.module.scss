@@ -7,6 +7,8 @@
     flex-direction: column;
     gap: 33px;
 
+    min-height: calc(100vh - 60px);
+
     &__item {
         @extend %mainItem;
         display: flex;

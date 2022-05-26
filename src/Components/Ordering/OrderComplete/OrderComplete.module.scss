@@ -1,0 +1,44 @@
+@import '../../../Assets/UIKit/UIKit.scss';
+
+.orderComplete {
+    @extend %borders;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    height: calc(100vh - 60px);
+    &__item {
+        @extend %mainItem;
+
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 17px;
+        line-height: 21px;
+        /* identical to box height */
+        
+        text-align: center;
+        
+        color: #1C1C27;
+
+        height: 95px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    button {
+        @extend %button;
+        width: 100%;
+
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 17px;
+        line-height: 21px;
+        /* identical to box height */
+        
+        
+        color: #FFFFFF;
+    }
+}
